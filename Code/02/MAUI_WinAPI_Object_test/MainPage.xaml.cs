@@ -7,22 +7,32 @@ using System.Data.SQLite;
 using System.IO.Ports;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace MAUI_WinAPI_Object_test;
 public partial class MainPage : ContentPage
 {
 	int count = 0;
-
-	public MainPage()
+    public IDispatcherTimer timmer { get; set; }
+    public MainPage()
 	{
 		InitializeComponent();
-        Device.StartTimer(TimeSpan.FromMilliseconds(1000), () =>
-        {
-            labtime.Text = DateTime.Now.ToString("HH:mm:ss");
-            return true;
-        });
-    }
 
+        //---
+        //Timer Mode
+        //https://learn.microsoft.com/en-us/answers/questions/1207012/how-to-stop-device-starttimer
+        timmer = Application.Current.Dispatcher.CreateTimer();
+        timmer.Interval = new TimeSpan(0, 0, 0, 0, 100);//天/時/分/秒/毫秒
+        timmer.Tick += Timmer_Tick;
+        timmer.IsRepeating = true;//the timer will keep recurring, you can set false
+        timmer.Start();
+        //---Timer Mode
+
+    }
+    private void Timmer_Tick(object sender, EventArgs e)
+    {
+        labtime.Text = DateTime.Now.ToString("HH:mm:ss");
+    }
 
     private void OnCounterClicked(object sender, EventArgs e)
 	{
@@ -138,6 +148,7 @@ public partial class MainPage : ContentPage
 
     private void OnClosed(object sender, EventArgs e)
     {
+        timmer.Stop();
         // Close the active window
         //https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/windows
         Application.Current.CloseWindow(GetParentWindow());
