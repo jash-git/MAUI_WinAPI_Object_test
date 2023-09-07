@@ -25,8 +25,17 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
+            
             <BoxView  Grid.Row="0" Grid.Column="0" Color="Teal" />
+            <Button Grid.Row="0" Grid.Column="0"
+                x:Name="CloseBtn"
+                Text="Close"
+                Clicked="CloseBtn_Clicked"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"/>
+            
             <BoxView  Grid.Row="0" Grid.Column="1" Color="Purple" />
+            
             <BoxView  Grid.Row="0" Grid.Column="2" Color="Red" />
         </Grid>
         <BoxView  Grid.Row="1" Grid.Column="0" Color="Blue" />

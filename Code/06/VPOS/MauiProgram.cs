@@ -49,7 +49,9 @@ namespace VPOS
                     //---
                     //[Windows] How to completely hide the TitleBar? 
                     //https://github.com/dotnet/maui/issues/15142
+                    //https://www.cnblogs.com/whuanle/p/17060473.html [疯狂吐槽 MAUI 以及 MAUI 入坑知识点]
                     window.ExtendsContentIntoTitleBar = false;
+                    // 保留任务栏
                     switch (winuiAppWindow.Presenter)
                     {
                         case Microsoft.UI.Windowing.OverlappedPresenter overlappedPresenter:
@@ -57,6 +59,8 @@ namespace VPOS
                             overlappedPresenter.Maximize();
                             break;
                     }
+                    // 全屏时去掉任务栏
+                    winuiAppWindow.SetPresenter(AppWindowPresenterKind.FullScreen);
                     //---[Windows] How to completely hide the TitleBar? 
 
                 });
