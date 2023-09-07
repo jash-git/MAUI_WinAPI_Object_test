@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VPOS.MainPage"
+             Title=""><!-- 隱藏標題 -->
+
+    <Grid x:Name="FullGrid">
+        <!-- ContentPage 規劃成兩列一行-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="0.7*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <BoxView Grid.Row="0" Grid.Column="0" Color="Green" />
+        <Grid x:Name="MainGrid" Grid.Row="0" Grid.Column="0">
+            <!-- 規劃成一列三行-->
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <BoxView  Grid.Row="0" Grid.Column="0" Color="Teal" />
+            <BoxView  Grid.Row="0" Grid.Column="1" Color="Purple" />
+            <BoxView  Grid.Row="0" Grid.Column="2" Color="Red" />
+        </Grid>
+        <BoxView  Grid.Row="1" Grid.Column="0" Color="Blue" />
+
+    </Grid>
+</ContentPage>
