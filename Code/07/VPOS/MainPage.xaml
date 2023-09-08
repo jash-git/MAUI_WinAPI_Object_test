@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VPOS.CustomControls"
+             x:Class="VPOS.MainPage"
+             Title=""><!-- 隱藏標題 -->
+
+    <Grid x:Name="FullGrid">
+        <!-- ContentPage 規劃成兩列一行-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="0.7*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <BoxView Grid.Row="0" Grid.Column="0" Color="Green" />
+        <Grid x:Name="LeftGrid" Grid.Row="0" Grid.Column="0">
+            <!-- 規劃成一列三行-->
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Border Stroke="#C49B33"
+                Grid.Row="0" Grid.Column="0"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="Teal"
+                Padding="3,3,3,3">
+
+                <Button Grid.Row="0" Grid.Column="0"
+                x:Name="CloseBtn"
+                Text="Close"
+                Clicked="CloseBtn_Clicked"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"/>
+            </Border>
+
+            <Border Stroke="#C49B33"
+                Grid.Row="0" Grid.Column="1"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="Purple"
+                Padding="3,3">            
+            </Border>
+
+            <BoxView  Grid.Row="0" Grid.Column="2" Color="Blue" />
+            <Grid x:Name="RightGrid" Grid.Row="0" Grid.Column="2">
+                <!-- ContentPage 規劃成三列一行-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="4.5*" />
+                    <RowDefinition Height="3.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Stroke="#C49B33"
+                Grid.Row="0" Grid.Column="0"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="Blue"
+                Padding="3,3,3,3">
+                    <Grid x:Name="CategoryGrid" Grid.Row="0" Grid.Column="0" Margin="3" RowSpacing="3" ColumnSpacing="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Color="White" />
+                        <local:CustomButton
+                    Grid.Row="1" Grid.Column="0"
+                    x:Name="Btn00"
+                    Text="Btn00"/>
+                        <local:CustomButton
+                    Grid.Row="1" Grid.Column="1"
+                    x:Name="Btn01"
+                    Text="Btn01"/>
+                        <local:CustomButton
+                    Grid.Row="1" Grid.Column="2"
+                    x:Name="Btn02"
+                    Text="Btn02"/>
+                        <local:CustomButton
+                    Grid.Row="1" Grid.Column="3"
+                    x:Name="Btn03"
+                    Text="Btn03"/>
+
+                        <local:CustomButton
+                    Grid.Row="2" Grid.Column="0"
+                    x:Name="Btn04"
+                    Text="Btn04"/>
+                        <local:CustomButton
+                    Grid.Row="2" Grid.Column="1"
+                    x:Name="Btn05"
+                    Text="Btn05"/>
+                        <local:CustomButton
+                    Grid.Row="2" Grid.Column="2"
+                    x:Name="Btn06"
+                    Text="Btn06"/>
+                        <local:CustomButton
+                    Grid.Row="2" Grid.Column="3"
+                    x:Name="Btn07"
+                    Text="Btn07"/>
+                    </Grid>
+                </Border>
+                <BoxView  Grid.Row="1" Grid.Column="0" Color="Green"/>
+                <BoxView  Grid.Row="2" Grid.Column="0" Color="Red"/>
+            </Grid>
+        </Grid>
+        <BoxView  Grid.Row="1" Grid.Column="0" Color="Blue"/>
+        <Border Stroke="#C49B33"
+                Grid.Row="1" Grid.Column="0"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="Blue"
+                Padding="3,3,3,3">
+        </Border>
+
+    </Grid>
+</ContentPage>
