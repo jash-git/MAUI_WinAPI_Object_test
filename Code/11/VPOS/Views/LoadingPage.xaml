@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VPOS.Views.LoadingPage"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             Shell.NavBarIsVisible="False"
+             Title="LoadingPage">
+    <!--    	
+    Building a login flow with .NET MAUI
+        https://www.c-sharpcorner.com/blogs/building-a-login-flow-with-net-maui
+    -->
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{StaticResource Tertiary}"/>
+    </ContentPage.Behaviors>
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <ActivityIndicator Color="{StaticResource Primary}"
+                               IsRunning="True" HeightRequest="50" WidthRequest="50"
+                               IsVisible="True" />
+        <Label Text="系統初始化請稍後..." HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

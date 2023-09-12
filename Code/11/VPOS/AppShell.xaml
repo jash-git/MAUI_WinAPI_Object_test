@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="VPOS.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:VPOS"
+    xmlns:views="clr-namespace:VPOS.Views"
+    Shell.FlyoutBehavior="Disabled">
+    <!--    	
+    Building a login flow with .NET MAUI
+        https://www.c-sharpcorner.com/blogs/building-a-login-flow-with-net-maui
+    -->
+    <!-- Loading Page -->
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:LoadingPage}"
+        Route="loading" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>
