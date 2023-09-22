@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_ListView.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <ListView x:Name="lvUser"
+                      Margin="20"
+                      SelectionMode="Single"
+                      BackgroundColor="White"
+                      ItemSelected="lvUser_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!-- ListView 資料結構標準: ListView.ItemTemplate -> DataTemplate -> ViewCell-->
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnImageClicked" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Label Text="{Binding user_account}" 
+                                       FontSize="26"
+                                       VerticalTextAlignment="Center">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnLabelClicked" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
