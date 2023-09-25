@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauCustBtn.CustBtn">
+    <Border Stroke="#C49B33"
+        StrokeThickness="4"
+        Background="#2B0B98"
+        Padding="16,8"
+        HorizontalOptions="Center">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="40,0,0,40" />
+        </Border.StrokeShape>
+        <Label Text=".NET MAUI"
+           TextColor="White"
+           FontSize="18"
+           FontAttributes="Bold" />
+    </Border>
+</ContentView>
