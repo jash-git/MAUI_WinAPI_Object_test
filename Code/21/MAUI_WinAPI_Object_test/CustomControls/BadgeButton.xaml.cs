@@ -7,6 +7,7 @@ public partial class BadgeButton : ContentView
 	public BadgeButton()
     {
 		InitializeComponent();
+        BaseImage.Source = ImageSource.FromFile("dotnet_bot.png");
     }
 
     private void ContentView_SizeChanged(object sender, EventArgs e)

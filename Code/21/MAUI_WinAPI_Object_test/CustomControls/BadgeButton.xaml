@@ -11,7 +11,7 @@
         </Border.StrokeShape>
         <Grid x:Name="FullGrid" RowDefinitions="*" ColumnDefinitions="*" Padding="0,2,2,0" >
             <Image x:Name="BaseImage" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent"
-                   Source="dotnet_bot.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+                   HorizontalOptions="Center" VerticalOptions="Center"/>
             <BoxView x:Name="CircleBoxView" HorizontalOptions="End" VerticalOptions="Start"
                    Color="Red"  BackgroundColor="Transparent" WidthRequest="26" HeightRequest="26" CornerRadius="13"/>
             <Label x:Name="BadgeLabel" Grid.Row="0" Grid.Column="0" 
