@@ -16,5 +16,12 @@ namespace MAUI_WinAPI_Object_test
             await MainPagePoint.ShowPopupAsync(new PopupPage1());//this.ShowPopup(new PopupPage1());
             await MainPagePoint.ShowPopupAsync(new GridPage());
         }
+
+        public static async Task<int> CallShowPopup()
+        {
+            int intResult = 110;
+            await Class_Test.ShowPopup();
+            return intResult;
+        }
     }
 }

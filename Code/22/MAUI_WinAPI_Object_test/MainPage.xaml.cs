@@ -3,6 +3,7 @@ using System.Threading;
 using MAUI_WinAPI_Object_test.Views;
 using MAUI_WinAPI_Object_test.CustomControls;
 
+
 namespace MAUI_WinAPI_Object_test
 {
     public partial class MainPage : ContentPage
@@ -96,11 +97,25 @@ namespace MAUI_WinAPI_Object_test
             //await DisplayAlert("Alert", $"路徑:{AppDomain.CurrentDomain.BaseDirectory}", "OK");//await
 
             Class_Test.MainPagePoint = this;
+
+            //await Class_Test.ShowPopup();
+            //int i=await CallShowPopup();
+            //if (await Class_Test.CallShowPopup()>100)
+            if (await Class_Call.CallShowPopup() > 100)
+            {
+                labtime.IsVisible = !labtime.IsVisible;//元件隱藏/顯示
+
+                await DisplayAlert("Alert", $"{PopupBtn.CustomProperty};{PopupPage1.m_StrResult}", "OK");//await
+            }
+
+
+        }
+
+        private async Task<int> CallShowPopup()
+        {
+            int intResult = 0;
             await Class_Test.ShowPopup();
-            labtime.IsVisible = !labtime.IsVisible;//元件隱藏/顯示
-
-            await DisplayAlert("Alert", $"{PopupBtn.CustomProperty};{PopupPage1.m_StrResult}", "OK");//await
-
+            return intResult;
         }
     }
 }
