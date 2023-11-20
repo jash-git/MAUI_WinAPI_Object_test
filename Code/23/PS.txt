@@ -1,0 +1,4 @@
+﻿C# Maui DataGrid 自己修改YT範例讓 DataGrid 可以比版面大(使用ScrollView)
+
+https://www.youtube.com/watch?v=ERQMKw26zrs
+https://github.com/jfversluis/MauiDataGridSample
